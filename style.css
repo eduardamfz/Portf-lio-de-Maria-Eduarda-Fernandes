@@ -1,0 +1,172 @@
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+    color: white;
+    
+}
+
+body {
+    background-color: black;
+    height: 100 vh;
+}
+
+.interface {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.btn-Contato button {
+   padding: 10px 40px;
+   font-size: 18px;
+   font-weight: 600;
+   background-color: indigo;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2
+}
+
+
+
+/* ESTILO DO CABEÇALHO */
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+   color: #7d7d7d;
+   text-decoration: none;
+   display: inline-block;
+   
+}
+
+ a:hover {
+   color: #ffffff;
+   transform: scale(1.05);
+   transition: .2s;
+   
+}
+
+header nav ul{
+    list-style-type: none;
+
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
+
+}
+
+
+
+.logo img {
+    max-width: 225px;
+    height: auto;
+}
+
+.btn-Contato button:hover {
+   background-color: indigo;
+   box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+
+}
+
+header nav ul li a {
+    font-size: 18px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILO DO TOPO DO SITE */
+section.Topo do site {
+    padding: 40px 4%;
+
+
+}
+
+
+
+.topo-site-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 200px;
+    
+}
+
+.txt-topo-site {
+    flex: 1;
+    text-align: left;
+
+    
+}
+
+.txt-topo-site h1 {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 50px;
+}
+
+.txt-topo-site p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 40px 0;
+}
+
+
+.txt-topo-site h1 span {
+    color: indigo;
+}
+
+
+.img-topo-site img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 50%; /* opcional */
+}
+
+
+
+
+
+/* ANIMAÇÃO DA IMAGEM PESSOA */
+.topo-site-conteudo .img-topo-site img {
+   position: relative;
+   animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+       top: 0px;
+    }
+    100% {
+       top: 30px    ;
+    }
+}
