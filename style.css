@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: 'Lexend', sans-serif;
     color: white;
-    
 }
 
 body {
@@ -16,131 +15,157 @@ body {
 .interface {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 4%;
 }
 
-
 .btn-Contato button {
-   padding: 10px 40px;
-   font-size: 18px;
-   font-weight: 600;
-   background-color: indigo;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: indigo;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.2
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 h2.titulo {
     color: #ffffff;
     font-size: 30px;
     text-align: center;
-    margin-top: 200px; /* Adiciona espaçamento acima do título */
-
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
 
- button:hover {
-   background-color: indigo;
-   box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
-   transform: scale(1.05);
-   transition: 0.2s;
+button:hover {
+    background-color: indigo;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
 /* ESTILO DO CABEÇALHO */
-
 header > .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 4%;
 }
 
 header a {
-   color: #7d7d7d;
-   text-decoration: none;
-   display: inline-block;
-   
+    color: #7d7d7d;
+    text-decoration: none;
+    display: inline-block;
 }
 
- a:hover {
-   color: #ffffff;
-   transform: scale(1.05);
-   transition: .2s;
-   
+a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    transition: 0.2s;
 }
 
-header nav ul{
+header nav ul {
     list-style-type: none;
-
 }
 
 header nav ul li {
     display: inline-block;
-    padding: 0 40px;
-
+    padding: 0 20px;
 }
 
 .logo img {
-    max-width: 225px;
+    max-width: 200px;
     height: auto;
 }
 
 header nav ul li a {
-    font-size: 18px; 
+    font-size: 16px;
 }
 
+/* Estilo do Menu Mobile */
+.btn-abrir-menu {
+    display: none;
+    color: indigo;
+    font-size: 40px;
+    cursor: pointer;
+}
 
+.menu-mobile {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    height: 100vh;
+    overflow: hidden;
+    transition: 0.5s;
+}
 
+.menu-mobile.abrir-menu {
+    width: 70%;
+}
 
+.menu-mobile nav ul {
+    flex-direction: column;
+    text-align: right;
+    padding-top: 60px;
+}
 
+.menu-mobile nav ul li a {
+    color: #575757;
+    font-size: 1.5em;
+    padding: 15px 40px;
+    display: block;
+}
 
+.menu-mobile .btn-fechar {
+    padding: 20px 40px;
+    text-align: right;
+}
 
+.menu-mobile .btn-fechar i {
+    color: indigo;
+    font-size: 2em;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
+.overlay-menu {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
 
 /* ESTILO DO TOPO DO SITE */
-section.Topo do site {
-    padding: 40px 4%;
-
-
-}
-
 .topo-site-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 200px;
-    
+    gap: 40px;
+    padding: 40px 0;
 }
 
 .txt-topo-site {
     flex: 1;
     text-align: left;
-
-    
 }
 
 .txt-topo-site h1 {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
-    margin-bottom: 25px;
-    line-height: 50px;
+    line-height: 1.2;
 }
 
 .txt-topo-site p {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5;
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .txt-topo-site h1 span {
@@ -148,96 +173,76 @@ section.Topo do site {
 }
 
 .img-topo-site img {
-    max-width: 450px;
+    max-width: 350px;
     height: auto;
-    border-radius: 50%; /* opcional */
-    
-}
-
-
-
-
-
-/* ANIMAÇÃO DA IMAGEM PESSOA */
-.topo-site-conteudo .img-topo-site img {
-   position: relative;
-   animation: flutuar 2s ease-in-out infinite alternate;
+    border-radius: 50%;
+    animation: flutuar 2s ease-in-out infinite alternate;
 }
 
 @keyframes flutuar {
-    0% {
-       top: 0px;
-    }
-    100% {
-       top: 30px    ;
-    }
+    0% { top: 0px; }
+    100% { top: 20px; }
 }
-
-
 
 /* ESTILO DA FORMAÇÃO ACADÊMICA */
-section.formacao-academica {
-    padding: 10px 4%;
-    font-size: 20px;
-    margin-top: 60px;
-}
-section.formacao-academica .flex {
-    gap: 50px;
+section.formacao-academica .interface > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .formacoes-box {
     color: #ffffff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     border: 2px solid rgb(17, 16, 16);
-    margin-top: 45px;
-    transition: 2s;
-    max-width: 500px;
-    
+    margin-top: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 350px;
+    text-align: center;
 }
 
 .formacoes-box i {
-    font-size: 55px;
+    font-size: 45px;
     color: rgb(156, 46, 235);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
+
 .formacoes-box h3 {
-    font-size: 26px;
-   margin: 15px 0; 
+    font-size: 22px;
+    margin: 10px 0;
 }
 
 .formacoes-box p {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
 .formacoes-box:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.445)
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.445);
 }
-
 
 /* ESTILO DO SOBRE */
 section.sobre {
-    padding: 120px 4%;
-    margin-top: 80px;
-
+    padding: 80px 4%;
 }
 
 section.sobre .flex {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
 }
 
 .txt-sobre {
-color: #ffffff;
+    color: #ffffff;
 }
 
 .sobre .txt-sobre h2 {
-font-size: 50px;
-line-height: 40px;
-margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .sobre .txt-sobre h2 span {
@@ -246,172 +251,138 @@ margin-bottom: 30px;
 }
 
 .sobre .txt-sobre .btn-social {
-  display: flex;
-  gap: 16px;
-  margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .sobre .txt-sobre .btn-social a {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background-color: indigo;
-  font-size: 22px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  transition: .2s;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: indigo;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-
-
-
-
-
-
-
-
-/* IMAGEM FOTO */
+.sobre .txt-sobre .btn-social a:hover {
+    transform: scale(1.1);
+}
 
 .img-sobre img {
-    border-radius: 50px; /* Deixa a imagem com cantos arredondados */
-    transition: transform 0.2s ease; /* Adiciona uma transição suave */
-
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
 }
 
 .img-sobre img:hover {
-    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
 
-
-
-
-
-
-/* ESTILO DAS HABILIDADES  */
-
+/* ESTILO DAS HABILIDADES */
 .habilidades-section {
-    padding: 60px 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o título */
-    margin-top: 100px;
+    padding: 60px 4%;
+    text-align: center;
+    margin-top: 60px;
 }
 
 .habilidades-titulo {
-    font-size: 2.5em; /* Tamanho do título */
-    color: white; /* Cor para o título, um azul ciano */
-    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 30px;
 }
-
 
 .habilidades-container {
     display: flex;
-    justify-content: center; /* Centraliza as colunas na horizontal */
-    flex-wrap: wrap; /* Permite que as colunas quebrem a linha em telas menores */
-    gap: 30px; /* Espaço entre as colunas */
-    max-width: 1200px; /* Largura máxima para o contêiner das colunas */
-    margin: 0 auto; /* Centraliza o contêiner na página */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .habilidades-coluna {
-    background-color: indigo; 
-    border-radius: 10px; 
-    padding: 30px;
-    width: 300px; /* Largura fixa para cada coluna */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
-    text-align: left; /* Alinha o texto das listas à esquerda */
-    transition: transform 0.3s ease; /* Transição suave para o hover */
+    background-color: indigo;
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: transform 0.3s ease;
 }
 
 .habilidades-coluna:hover {
-    transform: translateY(-10px); /* Efeito de subir um pouco ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .habilidades-coluna h3 {
-    font-size: 1.8em; /* Tamanho do subtítulo da coluna */
-    color: white; /* Cor branca para os subtítulos */
-    margin-bottom: 20px;
-    border-bottom: 2px solid indigo; /* Linha abaixo do subtítulo */
-    padding-bottom: 10px;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 8px;
 }
 
 .habilidades-coluna ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .habilidades-coluna ul li {
-    font-size: 1.1em;
-    padding: 10px 0;
-    border-bottom: 1px solid #555; 
-    color: #ccc; 
+    font-size: 1em;
+    padding: 8px 0;
+    border-bottom: 1px solid #555;
+    color: #ccc;
 }
 
 .habilidades-coluna ul li:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* ESTILO DO FORMULÁRIO DE CONTATO */
 .section.formulario {
-    padding: 80px 20px;
-    text-align: center; 
-    background-color: #000000; 
-    color: #f0f0f0; 
-    margin-top: 160px; 
+    padding: 60px 4%;
+    text-align: center;
+    margin-top: 100px;
 }
 
-/* Título do Formulário */
 .section.formulario h2 {
-    font-size: 2.8em;
-   
-    margin-bottom: 50px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
 }
 
-.form-container { 
-    background-color: #333333; 
-    border-radius: 15px; 
-    padding: 40px;
-    max-width: 500px;
-    margin: 0 auto; 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); 
+.form-container {
+    background-color: #333333;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
-
 
 .form-group {
-    margin-bottom: 25px; 
-    text-align: left; 
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .form-group label {
-    display: block; 
-    font-size: 1.1em;
-    color: white; 
-    margin-bottom: 10px;
+    display: block;
+    font-size: 1em;
+    color: white;
+    margin-bottom: 8px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
+.form-group input,
 .form-group textarea {
-
-    width: calc(100% - 20px);
-    padding: 15px;
+    width: 100%;
+    padding: 12px;
     border: 1px solid #6a1b9a;
     border-radius: 8px;
     background-color: #424242;
@@ -421,52 +392,39 @@ margin-bottom: 30px;
     transition: border-color 0.3s ease;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
+.form-group input:focus,
 .form-group textarea:focus {
     border-color: #7b1fa2;
 }
 
 .form-group textarea {
-    resize: vertical; 
-    min-height: 120px; 
+    resize: vertical;
+    min-height: 100px;
 }
 
-/* Botão de Envio */
 .form-container button[type="submit"] {
-    background-color: #673ab7; 
-    color: #ffffff; /* Cor do texto do botão */
-    padding: 15px 30px;
+    background-color: #673ab7;
+    color: #ffffff;
+    padding: 12px 25px;
     border: none;
-    border-radius: 8px; 
-    font-size: 1.2em;
-    cursor: pointer; 
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Espaço acima do botão */
+    margin-top: 15px;
 }
 
 .form-container button[type="submit"]:hover {
-    background-color: #5e35b1; 
+    background-color: #5e35b1;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* --- ESTILO DO RODAPÉ --- */
 footer {
     background-color: #1a1a1a;
-    padding: 60px 20px 40px;
+    padding: 40px 4%;
     position: relative;
-    margin-top: 200px;
+    margin-top: 100px;
 }
-
 
 footer::before {
     content: '';
@@ -474,7 +432,7 @@ footer::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; 
+    width: 90%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -485,23 +443,22 @@ footer::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .logo-footer img {
-    width: 150px; 
+    width: 120px;
     height: auto;
 }
-
 
 .footer-social-links {
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
 
 .footer-social-links a {
     color: #fff;
@@ -513,322 +470,95 @@ footer::before {
 }
 
 .footer-social-links a i {
-    font-size: 24px;
+    font-size: 22px;
     color: #fff;
-    
 }
 
-
 .footer-social-links a:hover {
-    color: #673ab7; 
+    color: #673ab7;
 }
 
 .footer-social-links a:hover i {
-    color: #673ab7; 
+    color: #673ab7;
 }
 
-
 .footer-social-links span {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #f0f0f0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos para telas de tablets e celulares (max-width: 768px) */
-@media screen and (max-width: 768px) {
-    
-    /* Na seção de habilidades, os cards ficarão um abaixo do outro em telas menores */
-    .section.habilidades .habilidades-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* No formulário, diminui o espaçamento */
-    .section.formulario .form-container {
-        padding: 20px;
-    }
-    
-    /* No rodapé, a logo e os links ficam um abaixo do outro */
-    .main-footer .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-}
-
-/* Estilos para telas de celulares (max-width: 480px) */
-@media screen and (max-width: 480px) {
-
-    /* Diminui o tamanho das fontes e ícones */
-    body {
-        font-size: 14px;
-    }
-    
-    .section-titulo {
-        font-size: 2em;
-    }
-
-    .social-link {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-    .container {
-       display: block;
-       background-image: none;
-
-   }
-
-    }
-
-.container_imagem {
-    width: 50vw;
-
-}
-
-
-.container_caixa {
-    margin: 2em 2em;
-}
-
-
 /* RESPONSIVIDADE */
-
-/* Telas menores que 1020px */
 @media screen and (max-width: 1020px) {
-
-    /* Estilo Geral */
-    .interface {
-        padding: 0 4%;
-    }
-
-    .btn-abrir-menu {
-        display: block;
-    }
-
     .menu-desktop, .btn-Contato {
         display: none;
     }
 
-    /* Estilo do Menu Mobile */
-    .menu-mobile {
-        background-color: black;
-        backdrop-filter: blur(5px);
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 99999;
-        width: 0%;
-        height: 100vh;
-        overflow: hidden;
-        transition: .5s;
-    }
-
-    .menu-mobile.abrir-menu {
-        width: 70%;
-    }
-
-    .menu-mobile.abrir-menu ~ .overlay-menu {
+    .btn-abrir-menu {
         display: block;
+        padding-right: 4%;
     }
 
-    .menu-mobile nav ul {
-        flex-direction: column;
-        text-align: right;
-    }
-
-    .menu-mobile nav ul li a {
-        color: #575757;
-        font-size: 2em;
-        padding: 20px 40px;
-        display: block;
-    }
-
-    .menu-mobile .btn-fechar {
-        padding: 20px 40px;
-    }
-
-    .menu-mobile .btn-fechar i {
-        color: indigo;
-        font-size: 2em;
-    }
-
-    .btn-abrir-menu i {
-        color: indigo;
-        font-size: 40px;
-    }
-
-    .overlay-menu {
-        background-color: rgb(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 88888;
-        display: none;
-    }
-
-    /* Estilo do Topo do Site */
     .topo-site-conteudo {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
     }
 
     .txt-topo-site h1 {
-        font-size: 40px;
-        line-height: 45px;
-        margin-bottom: 15px;
+        font-size: 36px;
+        line-height: 1.2;
     }
 
     .txt-topo-site p {
         font-size: 16px;
-        margin: 20px 0;
     }
-    
+
     .img-topo-site img {
-        max-width: 300px;
+        max-width: 250px;
     }
 
-    /* Estilo da Formação Acadêmica */
-    .formacao-academica .interface div {
-        flex-direction: column;
-    }
-
-    .formacoes-box {
-        max-width: 100%;
-    }
-    
-    /* Estilo do Sobre */
     .sobre .flex {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .txt-sobre h2 {
-        font-size: 35px;
-        line-height: 38px;
+        font-size: 32px;
     }
 
     .img-sobre img {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* Estilo de Habilidades */
-    .habilidades-container {
-        flex-direction: column;
-        align-items: center;
+        max-width: 300px;
     }
 
     .habilidades-coluna {
-        width: 100%;
+        width: 90%;
+        max-width: none;
     }
-    
-    /* Estilo do Rodapé */
+
+    .form-container {
+        width: 90%;
+    }
+
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
-    
-    .footer-social-links {
-        justify-content: center;
-        margin-top: 20px;
-    }
 }
 
-/* Telas menores que 576px */
 @media screen and (max-width: 576px) {
-    
     .logo img {
-        max-width: 150px;
+        max-width: 120px;
     }
-    
     .txt-topo-site h1 {
-        font-size: 30px;
-        line-height: 35px;
-    }
-    
-    .txt-topo-site p {
-        font-size: 14px;
-    }
-
-    .txt-sobre h2 {
         font-size: 28px;
-        line-height: 32px;
     }
-    
-    h2.titulo {
-        font-size: 24px;
-        margin-top: 100px;
-    }
-    
-    .section.formulario h2 {
+    .txt-sobre h2 {
         font-size: 26px;
     }
-
-    .form-container {
-        padding: 20px;
+    .footer-social-links a i {
+        font-size: 20px;
+    }
+    .footer-social-links span {
+        font-size: 0.8em;
     }
 }
